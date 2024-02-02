@@ -13,14 +13,14 @@ import {
 
 export const getCountries = () => {
   return async (dispatch) => {
-    const { data } = await axios.get("http://localhost:3001/countries/");
+    const { data } = await axios.get("https://backend-countries-pi.onrender.com/countries");
     dispatch({ type: GET_COUNTRIES, payload: data });
   };
 };
 
 export const getDetail = (id) => {
   return async (dispatch) => {
-    const { data } = await axios.get(`http://localhost:3001/countries/${id}`);
+    const { data } = await axios.get(`https://backend-countries-pi.onrender.com/countries/${id}`);
     dispatch({ type: GET_DETAIL, payload: data });
   };
 };
@@ -29,7 +29,7 @@ export const getName = (name) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/country/name?name=${name}`
+        `https://backend-countries-pi.onrender.com/country/name?name=${name}`
       );
 
       dispatch({ type: GET_BY_NAME, payload: data });
@@ -44,7 +44,7 @@ export const createActivity = (activityData) => {
     activityData.difficulty = Number(activityData.difficulty);
     activityData.duration = Number(activityData.duration);
     axios
-      .post("http://localhost:3001/activities", activityData, {
+      .post("https://backend-countries-pi.onrender.com/activities", activityData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -61,7 +61,7 @@ export const createActivity = (activityData) => {
 export const getActivities = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get("http://localhost:3001/activities");
+      const { data } = await axios.get("https://backend-countries-pi.onrender.com/activities");
       dispatch({ type: GET_ACTIVITIES, payload: data });
     } catch (error) {
       console.log(error);
