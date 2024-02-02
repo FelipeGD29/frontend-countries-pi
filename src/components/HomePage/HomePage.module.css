@@ -1,0 +1,11 @@
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: -150px;
+  background-image: url("https://media.giphy.com/media/VI2UC13hwWin1MIfmi/giphy.gif");
+}
